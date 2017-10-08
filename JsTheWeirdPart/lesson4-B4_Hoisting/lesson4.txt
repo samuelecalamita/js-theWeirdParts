@@ -1,0 +1,12 @@
+The execution Context: creation and hoisting
+
+- hoisting:
+Setup Memory Space for Variables and Functions, before the code runs.
+The function is entirely place in the memory space from the js engine, 
+for Variables the js engine put a placeolder for the value of the variable equal to 'undefined'
+
+Conceptual Aside:
+
+is not defined and undefined are not the same thing!!!
+undefined is a special value that says that a variable hasn´t been set.
+Is not defined Is an error 

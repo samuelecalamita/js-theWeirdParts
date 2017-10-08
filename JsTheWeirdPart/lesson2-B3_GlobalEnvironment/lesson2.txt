@@ -1,0 +1,11 @@
+- Execution context (Global):
+
+the things that runs on the first level in the Project.
+The execution Context create 2 things from the js engine, in the case on browser create:
+
+Global Object(window) and 'this' that at the global level are the same things.
+
+Global it means not inside a function, but on the first level.
+
+When code is executed an execution context is created, at the base level, 
+you have a global object that is the window and a special variable that is 'this' and is the same of of the global object.

@@ -1,0 +1,24 @@
+BIG WORD ALERTS
+
+- Syntax Parser: 
+A program that read your code and determines what it does and if its grammar is valid. 
+I write js, the parser read check and interpret my code. 
+The Parser go trough character per character to my code, that is human readable, and compile my code in a language that is computer readable.
+
+- Lexical Environment:
+Where something sits physically in the code you write. 
+A Lexical Environment exists in programming languages in which where you write something is important.
+
+- Execution Context:
+A wrapper that help manage the code that is running.
+
+CONCEPTUAL ASIDE
+
+- name/value pair:
+a name which maps to a unique value
+ex.
+    address = '100 Main str.'
+where address is Name and '100 Main str.' is a value.
+
+- Object:
+is a collection of name/value pairs, where a value can be another name/value pairs.
