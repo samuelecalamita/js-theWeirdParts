@@ -248,3 +248,70 @@ var spanish = {
 
 
 JSON AND OBJECT LITERALS
+Javascript object notaion, is inspiered by the object literal notation, where propertys HAVE to be wrapped in quotes.
+we can convert js object in json and json in js object:
+
+var person = {
+    firstname: 'samuele',
+    lastname: 'calamita'
+}
+
+console.log(JSON.stringify(person)); // i'll get a conversion of the object in JSON
+result: {"firstname":"samuele","lastname":"calamita"}
+
+{
+    "firstname":"samuele",
+    "lastname":"calamita"
+}
+
+console.log(JSON.parse({"firstname":"samuele","lastname":"calamita"})); // i'll get a conversion of the json in a object
+
+
+
+
+FUNCTION ARE OBJECTS
+- First class functions:
+every thing you can do with other types, boolean, obeject, variable ecc you can do with functions#
+
+function is a special type of object, you can attache primitive, object, or other functions.
+a function must not have a name, can be anonymous.
+A function has 2 property: name, in the next example greet, and the property code, what is in the execution context, the code can be invocate like greeet()
+I can attache property to a function like object:
+
+function greet() {
+    console.log('hi!');
+}
+
+greet.language = "english"; // i've set a property with language with the value english
+
+
+
+
+
+FUNCTIONS STATEMENT AND FUNCTIONS EXPRESSION
+- expression: 
+is a unit of code that results in a value.
+a = 3;
+1 + 2;
+...
+
+
+function greet() {     //  this is a function statement
+    console.log('hi');
+}
+greet();              // and i invoked it like this
+
+
+var anonymousGreet = function greet() {     //  this is a function expression, but is not hoisted!!!!
+    console.log('hi');
+} 
+anonymousGreet(); // and invoked like this, but i can´t invoke it before the declaration of the literal function!!!
+
+
+function greet(a) {
+    a();           
+}
+
+greet(function(){       // i can use a function as a parameter  
+    console.log('hi');
+});
