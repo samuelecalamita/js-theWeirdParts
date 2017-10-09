@@ -70,7 +70,7 @@ when i call a function an execution context is created, and is put on the execut
 
 FUNCTIONS, CONTEXT AND VARIABLE ENVIRONMENTS
 - variable environment (scope): 
-where the variable live nad how to relate each other in memory. Every execution context has its variable environment.
+where the variables live and how to relate each other in memory. Every execution context has its variable environment.
 
 
 
@@ -131,7 +131,7 @@ We can check associativity and precendence here -> https://developer.mozilla.org
 COERCION
 converting a value from one type to another. 
 If you try to do 1 + '2' the js engine will convert the first number to a string and will return 12 as result, 
-that ´s can be confusing when you are writing a lot of code.
+that´s can be confusing when you are writing a lot of code.
 
 COMPARISON OPERATORS
 Try to compare value that are the same type and use 99% times the strict equals operator ===
@@ -248,7 +248,7 @@ var spanish = {
 
 
 JSON AND OBJECT LITERALS
-Javascript object notaion, is inspiered by the object literal notation, where propertys HAVE to be wrapped in quotes.
+Javascript object notation, is inspiered by the object literal notation, where propertys HAVE to be wrapped in quotes.
 we can convert js object in json and json in js object:
 
 var person = {
@@ -271,7 +271,7 @@ console.log(JSON.parse({"firstname":"samuele","lastname":"calamita"})); // i'll 
 
 FUNCTION ARE OBJECTS
 - First class functions:
-every thing you can do with other types, boolean, obeject, variable ecc you can do with functions#
+every thing you can do with other types, boolean, obeject, variable ecc you can do with functions
 
 function is a special type of object, you can attache primitive, object, or other functions.
 a function must not have a name, can be anonymous.
@@ -283,8 +283,6 @@ function greet() {
 }
 
 greet.language = "english"; // i've set a property with language with the value english
-
-
 
 
 
@@ -315,3 +313,16 @@ function greet(a) {
 greet(function(){       // i can use a function as a parameter  
     console.log('hi');
 });
+
+
+
+BY VALUE BY REFERENCE
+- by value:
+if i have primitive value, boolean, string or number, and i set this value equal to a
+
+a = 3
+b = a  // b points to new location and copy the value of a and b will be a copy of a in memory
+
+- by reference:
+when i set a variable equal to a Object i still get a location in memory, 
+when i set b = a don´t copy in memory the value of a, simply point to the same location in memory as a.
