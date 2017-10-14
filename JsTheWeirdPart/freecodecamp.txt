@@ -1,0 +1,95 @@
+MAP ARRAY
+The map() method creates a new array with the results of calling a function for every array element.
+The map() method calls the provided function once for each element in an array, in order.
+Note: map() does not execute the function for array elements without values.
+Note: map() does not change the original array.
+
+var oldArray = [1,2,3,4,5];
+
+var newArray = oldArray.map(function(val){
+  return val + 3;
+});
+
+-> result =  [4,5,6,7,8]
+
+REDUCE ARRAY
+The reduce() method reduces the array to a single value.
+The reduce() method executes a provided function for each value of the array (from left-to-right).
+The return value of the function is stored in an accumulator (result/total).
+Note: reduce() does not execute the function for array elements without values.
+
+var array = [4,5,6,7,8];
+var singleVal = 0;
+
+singleVal = array.reduce(function(tot, num){
+  return tot + num;
+});
+
+-> sum of array's value = 30
+
+FILTER ARRAY
+The filter() method creates an array filled with all array elements that pass a test (provided as a function).
+Note: filter() does not execute the function for array elements without values.
+Note: filter() does not change the original array.
+
+var oldArray = [1,2,3,4,5,6,7,8,9,10];
+
+var newArray = oldArray.filter(function(val){
+  return val < 6;
+});
+
+-> result [1,2,3,4,5] 
+
+SORT ARRAY
+The sort() method sorts an array alphabetically, or in case of numbers from the smallest to the largest.
+We must use a function as fallow to make the sort() working because it convert numbers to strings and if we sort
+numbers higher than 9 we will have problems -> '20'(as string) is smallest than 3 !!!
+
+var array = [1, 12, 21, 2];
+// sort from smallest to largest
+array.sort(function(a, b){
+  return a - b;
+});
+// sort from largest to smallest
+array.sort(function(a, b){
+  return b - a;
+});
+
+
+REVERSE ARRAYS
+You can use the reverse method to reverse the elements of an array.
+reverse is another array method that alters the array in place, but it also returns the reversed array.
+
+var array = [1,2,3,4,5,6,7];
+var newArray = [];
+newArray = array.reverse();
+-> result [7,6,5,4,3,2,1]
+
+
+COCATANATE ARRAYS
+
+concat can be used to merge the contents of two arrays into one.
+var oldArray = [1,2,3];
+var newArray = [];
+var concatMe = [4,5,6];
+newArray = oldArray.concat(concatMe);
+
+
+SPLIT STRINGS TO ARRAY
+You can use the split method to split a string into an array.
+split uses the argument you pass in as a delimiter to determine which points the string should be split at.
+Here is an example of split being used to split a string at every space character:
+
+var string = "Split me into an array";
+var array = [];
+array = string.split(' ');
+-> result = ["Split","me","into","an","array";];
+
+JOIN STRINGS WITH JOIN
+We can use the join method to join each element of an array into a string separated by whatever delimiter you provide as an argument.
+The following is an example of using join to join all of the elements of an array into a string with all the elements separated by a space:
+
+var joinMe = ["Join","me","into","a","string"];
+var joinedString = '';
+joinedString = joinMe.join(' ');
+-> result = "Join me into a string"

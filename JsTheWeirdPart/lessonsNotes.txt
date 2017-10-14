@@ -28,7 +28,7 @@ The execution Context create 2 things from the js engine, in the case on browser
 Global Object(window) and 'this' that at the global level are the same things.
 Global it means not inside a function, but on the first level.
 When code is executed an execution context is created, at the base level, 
-you have a global object that is the window and a special variable that is 'this' and is the same of of the global object.
+you have a global object that is the window and a special variable that is 'this' and is the same of the global object.
 
 
 
@@ -106,7 +106,7 @@ you don´t tell the engine what type of data a variable holds, it figures it out
 
 PRIMITIVE TYPES
 a type of data that rapresent a single value, for example:
-- undefined: the code as never set a value (we let the engine assign this value)
+- undefined: the code has never set a value (we let the engine assign this value)
 - null: something isn´t been set (we could declare a variable with this value)
 - boolean: true or false
 - number: Floating Point number, there´s always some decimals.
@@ -271,7 +271,7 @@ console.log(JSON.parse({"firstname":"samuele","lastname":"calamita"})); // i'll 
 
 FUNCTION ARE OBJECTS
 - First class functions:
-every thing you can do with other types, boolean, obeject, variable ecc you can do with functions
+everything you can do with other types, boolean, obeject, variable ecc you can do with functions
 
 function is a special type of object, you can attache primitive, object, or other functions.
 a function must not have a name, can be anonymous.
