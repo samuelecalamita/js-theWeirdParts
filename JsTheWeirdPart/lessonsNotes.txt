@@ -326,3 +326,84 @@ b = a  // b points to new location and copy the value of a and b will be a copy 
 - by reference:
 when i set a variable equal to a Object i still get a location in memory, 
 when i set b = a don´t copy in memory the value of a, simply point to the same location in memory as a.
+
+
+
+OBJECT FUNCTIONS AND 'this'
+
+When a function is invoked a new execution context is created and putted on the execution stack. Each  execution context 
+has its variable environment ( scope ), has an outer environment ( outside from the lexical function ), give us the Variable 'this'.
+The this keyword in a function ( statement or expression ) will point to the outer environment.
+in Case of Method in an Object, the this keyword refered to the object self, ex:
+
+var c = {
+    name: 'c Object',
+    log: function() {     -> Method n an object
+        console.log(this);
+    }
+}
+
+c.log(); -> i will get in the Console c
+
+
+but if i create another similar function inside that method the this keyword will points to the global Object, ex: 
+
+var c = {
+    name: 'c Object',
+    log: function() {     -> Method n an object
+        console.log(this);     -> i will get in the Console c
+
+        var setname = function(newname){
+            this.name = newname;     -> the this here will point to the Global Object!!!
+        }
+
+        setname('updated again!'): 
+        console.log(this);     -> i will get in the Console c
+    }
+}
+
+c.log(); 
+
+a good way for solviing this behavior is this:
+
+var c = {
+    name: 'c Object',
+    log: function() {     -> Method n an object
+
+        var self = this;
+        console.log(self);     -> i will get in the Console the c object
+
+        var setname = function(newname){
+            self.name = newname;     -> the this here will now point to the Object!!!
+        }
+
+        setname('updated c Object name!'): 
+        console.log(self);     -> i will get in the Console 'updated c Object name!'
+    }
+}
+
+c.log(); 
+
+
+CONCEPTUAL ASIDE ARRAYS
+
+An arry can be a collection of everything:
+
+var arr = [
+    1,
+    false,
+    {
+        name: 'Tony',
+        address: '111 Main St.'
+    },
+    function(name){
+        var greeting = 'Hello ';
+        console.log(greeting + name)
+    },
+    'hello'
+]
+
+arr[3](arr[2].name); 
+in this ex. i call the functon that sits in 4th position of the array and give as parameter the name in
+in the object that sits in the third position of the array.
+ 
