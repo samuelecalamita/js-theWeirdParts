@@ -407,3 +407,36 @@ arr[3](arr[2].name);
 in this ex. i call the functon that sits in 4th position of the array and give as parameter the name in
 in the object that sits in the third position of the array.
  
+
+
+'arguments' AND SPREAD
+
+arguments: the parameters you pass to a function.
+Arguments is also a keyword that the js engine gives to you when you declare a function, like the this keyword give us a list 
+of arguments quite as an array.
+
+
+
+FRAMEWORK ASIDE: FUNCTION OVERLOADING
+
+function greet(firstname, lastname, language) {
+    language = language || 'en';
+
+    if (language === 'en') {
+        console.log('Hello ' + firstname + ' ' + lastname);
+    }
+    if (language === 'es') {
+        console.log('Hola ' + firstname + ' ' + lastname);
+    }
+}
+
+function greetingEnglish(firstname, lastname) {
+    greet(fistname, lastname, 'en');
+}
+function greetingSpanish(firstname, lastname) {
+    greet(fistname, lastname, 'es');
+}
+
+greetingEnglish('John','Doe'); -> 'Hello John Doe'
+greetingSpanish('John','Doe'); -> 'Hola John Doe'
+
