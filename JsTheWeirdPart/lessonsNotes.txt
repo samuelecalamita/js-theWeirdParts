@@ -440,3 +440,57 @@ function greetingSpanish(firstname, lastname) {
 greetingEnglish('John','Doe'); -> 'Hello John Doe'
 greetingSpanish('John','Doe'); -> 'Hola John Doe'
 
+
+
+++++++++DANGEROUS ASIDE+++++++++++++++
+Automatic Semicolon Insertion:
+anywhere where should be a semicolon the js engine does automatic.
+
+function getPeson() {
+
+    return
+    {
+        firstname: 'tony'
+    }
+}
+console.log(getPerson()): -> i´ll get undefined, because after return has to be a ; and not a new line!
+
+
+
+FRAMEWORK ASIDE
+WHITESPACES: space, tabs, carriage returns...
+the syntax parser ignored whitespace and also comment between the code and whitespaces!
+
+
+
+IMMEDIATELY INVOKED FUNCTION EXPRESSIONS (IIFE)s
+
+var firstname = 'John';
+
+(function(name) {
+    var greeting = 'Hello';
+    console.log(greeting + ' ' + name);
+}(firstname)); 
+
+or
+
+})(firstname);
+
+i can use this syntax also for wrapping the code of two files to prevent the collision of two variables with the same name.
+If i want that the variable can be used in the global context, i can do as follows:
+
+(function(global){
+
+    var greeting = 'hello';
+    global.greeting = 'hello';
+
+}(window));
+
+1) i pass the window object as parameter of the IIFE
+2) i give a parameter for the function expression ( for example global)
+3) i set the variable greeting accessible in the window Object.
+
+
+
+UNDERSTANTING CLOSURES
+
