@@ -1,10 +1,10 @@
 BIG WORD ALERTS
-- Syntax Parser: 
-A program that read your code and determines what it does and if its grammar is valid. 
-I write js, the parser read check and interpret my code. 
+- Syntax Parser:
+A program that read your code and determines what it does and if its grammar is valid.
+I write js, the parser read check and interpret my code.
 The Parser go trough character per character to my code, that is human readable, and compile my code in a language that is computer readable.
 - Lexical Environment:
-Where something sits physically in the code you write. 
+Where something sits physically in the code you write.
 A Lexical Environment exists in programming languages in which where you write something is important.
 - Execution Context:
 A wrapper that help manage the code that is running.
@@ -27,7 +27,7 @@ the things that runs on the first level in the Project.
 The execution Context create 2 things from the js engine, in the case on browser create:
 Global Object(window) and 'this' that at the global level are the same things.
 Global it means not inside a function, but on the first level.
-When code is executed an execution context is created, at the base level, 
+When code is executed an execution context is created, at the base level,
 you have a global object that is the window and a special variable that is 'this' and is the same of the global object.
 
 
@@ -35,20 +35,20 @@ you have a global object that is the window and a special variable that is 'this
 The execution Context, first phase: creation and hoisting
 - hoisting:
 Setup Memory Space for Variables and Functions, before the code runs.
-The function is entirely place in the memory space from the js engine, 
+The function is entirely place in the memory space from the js engine,
 for Variables the js engine put a placeolder for the value of the variable equal to 'undefined'
 
 CONCEPTUAL ASIDE
 is not defined and undefined are not the same thing!!!
 undefined is a special value that says that a variable hasn´t been set.
 Is not defined Is an error.
-Don´t set a variable equal to undefined, because it´s always hard to understand 
+Don´t set a variable equal to undefined, because it´s always hard to understand
 if the value is undefined because you set the variable or if the js engine set undefined.
 
 
 
 The execution Context, second phase: code execution
-Javascirpt run the code line by line, when it finds a function invocation, it jumps into the function, 
+Javascirpt run the code line by line, when it finds a function invocation, it jumps into the function,
 it runs the function line by line inside it,
 and then jump outside that function and contuine to run the code from where it was.
 
@@ -61,29 +61,29 @@ meaning the code is executed one line at a time.(but there is also an asynchrono
 
 
 FUNCTION INVOCATION AND THE EXECUTION STACK
-- Invocation: 
+- Invocation:
 run/call a function
-- execution stack: 
+- execution stack:
 when i call a function an execution context is created, and is put on the execution stack.
 
 
 
 FUNCTIONS, CONTEXT AND VARIABLE ENVIRONMENTS
-- variable environment (scope): 
+- variable environment (scope):
 where the variables live and how to relate each other in memory. Every execution context has its variable environment.
 
 
 
 THE SCOPE CHAIN
 if your code looks for a variable that is not declared in its scope, in the case of a function
-the js engine looks in the outher environment (outside the function) 
+the js engine looks in the outher environment (outside the function)
 where the function is sitted lexically (where the function is declared),
 and not where is called!
 
 
 
 SCOPE, ES6, AND let
-- scope: 
+- scope:
 is where a variable is available in your code.
 - let:
 is a new way to declare variable in ES6, allows the js engine to use the block scoping,
@@ -116,7 +116,7 @@ a type of data that rapresent a single value, for example:
 
 
 OPERATORS
-a special function synthactically written different, that normal accept 2 parameters.( + - * / % )  
+a special function synthactically written different, that normal accept 2 parameters.( + - * / % )
 
 OPERATORS PRECEDENCE AND ASSOCIATIVITY
 - Operator precedence:
@@ -129,8 +129,8 @@ We can check associativity and precendence here -> https://developer.mozilla.org
 
 
 COERCION
-converting a value from one type to another. 
-If you try to do 1 + '2' the js engine will convert the first number to a string and will return 12 as result, 
+converting a value from one type to another.
+If you try to do 1 + '2' the js engine will convert the first number to a string and will return 12 as result,
 that´s can be confusing when you are writing a lot of code.
 
 COMPARISON OPERATORS
@@ -141,7 +141,7 @@ Try to compare value that are the same type and use 99% times the strict equals 
 
 
 EXISTENCE AND BOOLEAN
-We can take advantage of comparison operator with if statement, 
+We can take advantage of comparison operator with if statement,
 because we can check if a variable is defined and run code when it is.
 
     var a;
@@ -151,7 +151,7 @@ because we can check if a variable is defined and run code when it is.
     if ( a || a === 0 ) {
         // hier coercied the value of a with true
         console.log('Something is there!');
-    } 
+    }
     else {
         console.log('Nope, nothing is declared.');
     }
@@ -161,7 +161,7 @@ because we can check if a variable is defined and run code when it is.
 DEFAULT VALUES
 
     function greet(name) {
-        name = name || '<Your name here>'; // instead of return undefined i use this 
+        name = name || '<Your name here>'; // instead of return undefined i use this
         console.log('Hello ' + name);
     }
 
@@ -189,7 +189,7 @@ var firstNameProperty = 'firstname'; // just setting a variable with the value o
 console.log(person);                 // print the object person
 console.log(person[firstNameProperty]); // print the firstname value object person
 
-console.log(person.firstname)        // shorthand syntax for printing the firstname value object person  
+console.log(person.firstname)        // shorthand syntax for printing the firstname value object person
 
 person.address = new Object();       // create an object address in the object person
 person.address.street = 'triftstrasse 37'; // create property street with the value in the oject address that sits inside the object person
@@ -208,7 +208,7 @@ it´s a shorthand way to declare an obeject and declare its values.
 var person = {};                     // shorthand syntax for create object named person
 
 var Samu = {                       // shorthand syntax for declares property and set values
-    firstname: 'Samuele', 
+    firstname: 'Samuele',
     lastname: 'Calamita',
     address: {
         street: 'Triftstrasse 37',
@@ -216,7 +216,7 @@ var Samu = {                       // shorthand syntax for declares property and
         state: 'Germany'
     }};
 
-function greet(person) {           // i make a function where i can greet the person  
+function greet(person) {           // i make a function where i can greet the person
     console.log('Hello ' + person.firstname);
 }
 
@@ -240,10 +240,10 @@ console.log(greet);        // if i try to call greet i will get the just the sec
 
 var english = {            // i could solve this using an object.
     greet: 'Hello!';
-} 
-var spanish = {           
+}
+var spanish = {
     greet: 'Hola!';
-} 
+}
 
 
 
@@ -287,7 +287,7 @@ greet.language = "english"; // i've set a property with language with the value 
 
 
 FUNCTIONS STATEMENT AND FUNCTIONS EXPRESSION
-- expression: 
+- expression:
 is a unit of code that results in a value.
 a = 3;
 1 + 2;
@@ -302,15 +302,15 @@ greet();              // and i invoked it like this
 
 var anonymousGreet = function greet() {     //  this is a function expression, but is not hoisted!!!!
     console.log('hi');
-} 
+}
 anonymousGreet(); // and invoked like this, but i can´t invoke it before the declaration of the literal function!!!
 
 
 function greet(a) {
-    a();           
+    a();
 }
 
-greet(function(){       // i can use a function as a parameter  
+greet(function(){       // i can use a function as a parameter
     console.log('hi');
 });
 
@@ -324,14 +324,14 @@ a = 3
 b = a  // b points to new location and copy the value of a and b will be a copy of a in memory
 
 - by reference:
-when i set a variable equal to a Object i still get a location in memory, 
+when i set a variable equal to a Object i still get a location in memory,
 when i set b = a don´t copy in memory the value of a, simply point to the same location in memory as a.
 
 
 
 OBJECT FUNCTIONS AND 'this'
 
-When a function is invoked a new execution context is created and putted on the execution stack. Each  execution context 
+When a function is invoked a new execution context is created and putted on the execution stack. Each  execution context
 has its variable environment ( scope ), has an outer environment ( outside from the lexical function ), give us the Variable 'this'.
 The this keyword in a function ( statement or expression ) will point to the outer environment.
 in Case of Method in an Object, the this keyword refered to the object self, ex:
@@ -346,7 +346,7 @@ var c = {
 c.log(); -> i will get in the Console c
 
 
-but if i create another similar function inside that method the this keyword will points to the global Object, ex: 
+but if i create another similar function inside that method the this keyword will points to the global Object, ex:
 
 var c = {
     name: 'c Object',
@@ -357,12 +357,12 @@ var c = {
             this.name = newname;     -> the this here will point to the Global Object!!!
         }
 
-        setname('updated again!'): 
+        setname('updated again!'):
         console.log(this);     -> i will get in the Console c
     }
 }
 
-c.log(); 
+c.log();
 
 a good way for solviing this behavior is this:
 
@@ -377,12 +377,12 @@ var c = {
             self.name = newname;     -> the this here will now point to the Object!!!
         }
 
-        setname('updated c Object name!'): 
+        setname('updated c Object name!'):
         console.log(self);     -> i will get in the Console 'updated c Object name!'
     }
 }
 
-c.log(); 
+c.log();
 
 
 CONCEPTUAL ASIDE ARRAYS
@@ -403,16 +403,16 @@ var arr = [
     'hello'
 ]
 
-arr[3](arr[2].name); 
+arr[3](arr[2].name);
 in this ex. i call the functon that sits in 4th position of the array and give as parameter the name in
 in the object that sits in the third position of the array.
- 
+
 
 
 'arguments' AND SPREAD
 
 arguments: the parameters you pass to a function.
-Arguments is also a keyword that the js engine gives to you when you declare a function, like the this keyword give us a list 
+Arguments is also a keyword that the js engine gives to you when you declare a function, like the this keyword give us a list
 of arguments quite as an array.
 
 
@@ -470,7 +470,7 @@ var firstname = 'John';
 (function(name) {
     var greeting = 'Hello';
     console.log(greeting + ' ' + name);
-}(firstname)); 
+}(firstname));
 
 or
 
@@ -494,3 +494,55 @@ If i want that the variable can be used in the global context, i can do as follo
 
 UNDERSTANTING CLOSURES
 
+all variables that are supposed to have access to an execution context, also when a variable is created
+from another execution context, are closed into a closure and are usable from the execution context,
+this phenomenous is called closure. Is a feature of the js language.
+
+
+function buildFunctions() {
+
+  var arr = [];
+
+  for( var i = 0; i < 3; i++ ){
+
+    arr.push(
+      function() {
+        console.log(j);
+      }
+    )
+  }
+
+  return arr;
+}
+
+var fs = buildFunctions();
+
+fs[0](); -> result 3
+fs[1](); -> result 3
+fs[2](); -> result 3
+
+
+
+function buildFunctions() {
+
+  var arr = [];
+
+  for( var i = 0; i < 3; i++ ){
+
+    arr.push(
+      (function(j) {
+        return function(){
+          console.log(j);
+        }
+      }(i))
+    )
+  }
+
+  return arr;
+}
+
+var fs = buildFunctions();
+
+fs[0](); -> result 0
+fs[1](); -> result 1
+fs[2](); -> result 2
