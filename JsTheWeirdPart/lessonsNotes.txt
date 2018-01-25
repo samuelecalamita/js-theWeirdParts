@@ -494,3 +494,13 @@ If i want that the variable can be used in the global context, i can do as follo
 
 UNDERSTANTING CLOSURES
 
+is an important js topic. 
+
+function greet(whattosay) {
+    return function(name) {
+        console.log(whattosay + ' ' + name);
+    }
+}
+
+var sayHi = greet('Hi');
+sayHi('Tony');
