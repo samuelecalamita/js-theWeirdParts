@@ -10,7 +10,6 @@ A Lexical Environment exists in programming languages in which where you write s
 A wrapper that help manage the code that is running.
 
 
-
 CONCEPTUAL ASIDE
 - name/value pair:
 a name which maps to a unique value
@@ -19,8 +18,6 @@ ex.
 where address is Name and '100 Main str.' is a value.
 - Object:
 is a collection of name/value pairs, where a value can be another name/value pairs.
-
-
 
 - Execution context (Global):
 the things that runs on the first level in the Project.
@@ -50,7 +47,7 @@ if the value is undefined because you set the variable or if the js engine set u
 The execution Context, second phase: code execution
 Javascirpt run the code line by line, when it finds a function invocation, it jumps into the function,
 it runs the function line by line inside it,
-and then jump outside that function and contuine to run the code from where it was.
+and then jump outside that function and continue to run the code from where it was.
 
 BIG WORD ALERTS
 - js is single threaded:
@@ -557,3 +554,41 @@ var fs = buildFunctions();
 fs[0](); -> result 0
 fs[1](); -> result 1
 fs[2](); -> result 2
+
+
+CALL APPLY BIND
+call(), apply(), bind()
+Control what the 'this' variable do when the execution context in a function is created
+All functions have access with the call() apply() and bind() method, and all of this 3 things have to do with the 'this' variable.
+
+bind() after a function make a copy of the function and i can pass as argument what the this variable is
+call works the same as bind without make a copy of the fuction but with call i can call
+the function without using the parentheses and passing as parameter what the this keyword is
+apply is the as call but accept the function parameters as an array
+
+var person = {
+  firstname: "Samuele",
+  lastname: "Calamita",
+  getFullName: function() {
+    var fullname = this.firstname + ' ' + this.lastname;
+    return fullname;
+  }
+}
+
+var logName  = function(lang1, lang2) {
+    console.log('Logged: ' + this.getFullName());
+}
+
+var logPersonName = logName.bind(person)
+
+logName.call(person, 'en', 'es');
+
+logName.apply(person, ['en', 'es']); 
+
+BIG WORD ALERT
+function currying: creating a copy of a functionbut with some preset parameters, very useful in mathematical situations
+
+CLASSICAL VS PROTOTYPAL INHERITANCE (ereditá)
+INHERITANCE: one object gets access to the property and the methods of another object
+Classical inheritance: is very verbose...
+Protytypal inheritance: is simplier, flexible, extansible, easy to understand
