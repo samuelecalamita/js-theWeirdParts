@@ -491,7 +491,7 @@ If i want that the variable can be used in the global context, i can do as follo
 
 UNDERSTANTING CLOSURES
 
-is an important js topic. 
+is an important js topic.
 
 function greet(whattosay) {
     return function(name) {
@@ -583,12 +583,19 @@ var logPersonName = logName.bind(person)
 
 logName.call(person, 'en', 'es');
 
-logName.apply(person, ['en', 'es']); 
+logName.apply(person, ['en', 'es']);
 
 BIG WORD ALERT
-function currying: creating a copy of a functionbut with some preset parameters, very useful in mathematical situations
+function currying: creating a copy of a function but with some preset parameters, very useful in mathematical situations
 
 CLASSICAL VS PROTOTYPAL INHERITANCE (ereditá)
 INHERITANCE: one object gets access to the property and the methods of another object
 Classical inheritance: is very verbose...
-Protytypal inheritance: is simplier, flexible, extansible, easy to understand
+Prototypal inheritance: is simple, flexible, extansible, easy to understand
+
+Understanding the Prototype
+With prototype i can connect two or more objects so that they can share properties and methods.
+
+EVERYTHING IS AN OBJECT (or a primitive)
+
+REFLECTION: an object can look at itself, listing and changing its proprties and methods.
