@@ -599,3 +599,19 @@ With prototype i can connect two or more objects so that they can share properti
 EVERYTHING IS AN OBJECT (or a primitive)
 
 REFLECTION: an object can look at itself, listing and changing its proprties and methods.
+
+BUILDING OBJECTS
+function constructors, 'new' and Prototype
+Every function in JS has the prototype property
+
+function Person(firstname, lastname) {
+    this.firstname = firstname;
+    this.lastname = lastname;
+}
+
+var samu = new Person('samu', 'cal'); -> with 'new' a new Object is created
+
+BIG WORD ALERT: FUNCTION CONSTRUCTORS
+A normal function that is used to construct objects. The 'this' variable points a new empty object,
+and that object is returned from the function automatically.
+
