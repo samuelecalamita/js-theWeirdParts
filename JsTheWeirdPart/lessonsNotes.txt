@@ -615,3 +615,12 @@ BIG WORD ALERT: FUNCTION CONSTRUCTORS
 A normal function that is used to construct objects. The 'this' variable points a new empty object,
 and that object is returned from the function automatically.
 
+BIG WORD ALERT
+polyfill -> code that adds a feature which the engine may lack.
+
+CLASS in ES6
+with class I can define an object instead of writing var
+
+class Person {
+
+}
