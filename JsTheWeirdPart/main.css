@@ -1,0 +1,45 @@
+html {
+  font-family: 'Helvetica';
+  font-size: 1.25rem;
+}
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+nav {
+  position: relative;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul > li {
+  display: inline-block;
+}
+
+ul > li li{
+  display: block;
+}
+
+.js-menu-toggle {
+  display: block;
+  padding: 30px;
+  margin: 10px;
+  background-color: lightgreen;
+}
+
+.flyout {
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding: 30px;
+  background-color: lightblue;
+  left: 0;
+}
+
+.is-visible {
+  display: block;
+}
